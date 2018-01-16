@@ -1,19 +1,22 @@
 import * as React from 'react';
+
+import List from './List';
+import {
+  ListElement
+} from './types';
+
 import './App.css';
 
-const logo = require('./logo.svg');
+const data: ListElement[] = [
+  { description: 'do the homework', completed: false },
+  { description: 'play drums', completed: true },
+];
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <List data={data} />
       </div>
     );
   }
